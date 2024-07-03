@@ -2,7 +2,7 @@ import { DataTable } from "@/components/custom-ui/DataTable";
 import { columns } from "@/components/orderItems/OrderItemsColumns";
 
 const OrderDetails = async ({ params }: { params: { orderId: string } }) => {
-    const res = await fetch(`http://localhost/api/orders/${params.orderId}`);
+    const res = await fetch(`https://nowbrewing-admin.vercel.app/api/orders/${params.orderId}`);
 
     const { orderDetails, customer } = await res.json();
     const { street, city, state, postalCode, country } = orderDetails.shippingAddress;
